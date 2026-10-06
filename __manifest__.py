@@ -36,7 +36,7 @@ what became of the meeting itself. This app gives every meeting a status:
 The status bar and its buttons are on the meeting form. The list view shows
 the status as a colored badge and can be filtered and grouped by it.
 """,
-    'version': "20.0.1.0.0",
+    'version': "20.0.1.0.1",
     'author': "Hadron for Business sp. z o.o.",
     'website': "http://hadronforbusiness.com",
     'license': "OPL-1",
