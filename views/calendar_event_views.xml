@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_calendar_event_form_status" model="ir.ui.view">
+        <field name="name">calendar.event.form.status</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="action_meeting_open" type="object" string="Confirm"
+                            class="btn-primary"
+                            attrs="{'invisible': [('meeting_state', '!=', 'draft')]}"/>
+                    <button name="action_meeting_done" type="object" string="Set as Done"
+                            class="btn-primary"
+                            attrs="{'invisible': [('meeting_state', '!=', 'open')]}"/>
+                    <button name="action_meeting_open" type="object" string="Confirm"
+                            attrs="{'invisible': [('meeting_state', 'not in', ('done', 'cancel'))]}"/>
+                    <button name="action_meeting_done" type="object" string="Set as Done"
+                            attrs="{'invisible': [('meeting_state', 'not in', ('draft', 'cancel'))]}"/>
+                    <button name="action_meeting_cancel" type="object" string="Cancel"
+                            attrs="{'invisible': [('meeting_state', '=', 'cancel')]}"/>
+                    <button name="action_meeting_draft" type="object" string="Set to Unconfirmed"
+                            attrs="{'invisible': [('meeting_state', '=', 'draft')]}"/>
+                    <field name="meeting_state" widget="statusbar"
+                           statusbar_visible="draft,open,done,cancel"/>
+                </header>
+            </xpath>
+            <xpath expr="//field[@name='description']/.." position="after">
+                <group attrs="{'invisible': [('meeting_state', '!=', 'cancel')]}">
+                    <field name="cancel_reason" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_calendar_event_tree_status" model="ir.ui.view">
+        <field name="name">calendar.event.tree.status</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_tree"/>
+        <field name="arch" type="xml">
+            <field name="stop" position="after">
+                <field name="meeting_state" widget="badge"
+                       decoration-info="meeting_state == 'draft'"
+                       decoration-warning="meeting_state == 'open'"
+                       decoration-success="meeting_state == 'done'"
+                       decoration-danger="meeting_state == 'cancel'"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_calendar_event_search_status" model="ir.ui.view">
+        <field name="name">calendar.event.search.status</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <separator/>
+                <filter string="Unconfirmed" name="meeting_unconfirmed" domain="[('meeting_state', '=', 'draft')]"/>
+                <filter string="Confirmed" name="meeting_confirmed" domain="[('meeting_state', '=', 'open')]"/>
+                <filter string="Done" name="meeting_done" domain="[('meeting_state', '=', 'done')]"/>
+                <filter string="Cancelled" name="meeting_cancelled" domain="[('meeting_state', '=', 'cancel')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Meeting Status" name="group_meeting_state"
+                            context="{'group_by': 'meeting_state'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
