@@ -36,4 +36,4 @@ Adds a status to calendar meetings (unconfirmed, confirmed, done, cancelled) wit
 
 ## Status
 
-Source: client module (Odoo 16, ported to 17), where the status was a few fields and a cancel form hacked into the calendar form. Rewritten with a proper wizard. Odoo 17 build, tested on Odoo 17.
+Source: client module (Odoo 16, ported to 17), where the status was a few fields and a cancel form hacked into the calendar form. Rewritten with a proper wizard. Odoo 19 build.
