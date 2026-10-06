@@ -58,7 +58,7 @@
                 <filter string="Confirmed" name="meeting_confirmed" domain="[('meeting_state', '=', 'open')]"/>
                 <filter string="Done" name="meeting_done" domain="[('meeting_state', '=', 'done')]"/>
                 <filter string="Cancelled" name="meeting_cancelled" domain="[('meeting_state', '=', 'cancel')]"/>
-                <group expand="0" string="Group By">
+                <group>
                     <filter string="Meeting Status" name="group_meeting_state"
                             context="{'group_by': 'meeting_state'}"/>
                 </group>
