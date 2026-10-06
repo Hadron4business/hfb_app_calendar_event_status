@@ -16,7 +16,7 @@
 # all copies or substantial portions of the Software.
 #
 #################################################################################
-"""	@version	16.0.1.0.0
+"""	@version	17.0.1.0.0
 	@owner  Hadron for Business
 	@author Hadron for Business sp. z o.o.
 	@date   2026.10.06
@@ -39,7 +39,7 @@ class CalendarEventCancel(models.TransientModel):
         self.ensure_one()
         event = self.event_id
         event.write({'meeting_state': 'cancel', 'cancel_reason': self.reason})
-        event.message_post(body=_("Meeting cancelled. Reason: %s", self.reason))
+        event.message_post(body=_("Meeting cancelled. Reason: %s") % self.reason)
         return {'type': 'ir.actions.act_window_close'}
 
 #EoF

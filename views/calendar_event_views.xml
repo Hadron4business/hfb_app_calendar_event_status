@@ -10,27 +10,25 @@
                 <header>
                     <button name="action_meeting_open" type="object" string="Confirm"
                             class="btn-primary"
-                            attrs="{'invisible': [('meeting_state', '!=', 'draft')]}"/>
+                            invisible="meeting_state != 'draft'"/>
                     <button name="action_meeting_done" type="object" string="Set as Done"
                             class="btn-primary"
-                            attrs="{'invisible': [('meeting_state', '!=', 'open')]}"/>
+                            invisible="meeting_state != 'open'"/>
                     <button name="action_meeting_open" type="object" string="Confirm"
-                            attrs="{'invisible': [('meeting_state', 'not in', ('done', 'cancel'))]}"/>
+                            invisible="meeting_state not in ('done', 'cancel')"/>
                     <button name="action_meeting_done" type="object" string="Set as Done"
-                            attrs="{'invisible': [('meeting_state', 'not in', ('draft', 'cancel'))]}"/>
+                            invisible="meeting_state not in ('draft', 'cancel')"/>
                     <button name="action_meeting_cancel" type="object" string="Cancel"
-                            attrs="{'invisible': [('meeting_state', '=', 'cancel')]}"/>
+                            invisible="meeting_state == 'cancel'"/>
                     <button name="action_meeting_draft" type="object" string="Set to Unconfirmed"
-                            attrs="{'invisible': [('meeting_state', '=', 'draft')]}"/>
+                            invisible="meeting_state == 'draft'"/>
                     <field name="meeting_state" widget="statusbar"
                            statusbar_visible="draft,open,done,cancel"/>
                 </header>
             </xpath>
-            <xpath expr="//field[@name='description']/.." position="after">
-                <group attrs="{'invisible': [('meeting_state', '!=', 'cancel')]}">
-                    <field name="cancel_reason" readonly="1"/>
-                </group>
-            </xpath>
+            <field name="description" position="after">
+                <field name="cancel_reason" readonly="1" invisible="meeting_state != 'cancel'"/>
+            </field>
         </field>
     </record>
 
