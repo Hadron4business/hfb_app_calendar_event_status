@@ -1,0 +1,148 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hfb_app_calendar_event_status
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 07:15+0000\n"
+"PO-Revision-Date: 2026-10-07 07:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model,name:hfb_app_calendar_event_status.model_calendar_event
+msgid "Calendar Event"
+msgstr "Wydarzenie w kalendarzu"
+
+#. module: hfb_app_calendar_event_status
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_form_status
+msgid "Cancel"
+msgstr "Anuluj"
+
+#. module: hfb_app_calendar_event_status
+#. odoo-python
+#: code:addons/hfb_app_calendar_event_status/models/calendar_event.py:0
+#: model:ir.model,name:hfb_app_calendar_event_status.model_calendar_event_cancel
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_cancel_form
+#, python-format
+msgid "Cancel Meeting"
+msgstr "Anuluj spotkanie"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields,field_description:hfb_app_calendar_event_status.field_calendar_event__cancel_reason
+msgid "Cancellation Reason"
+msgstr "Powód anulowania"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields.selection,name:hfb_app_calendar_event_status.selection__calendar_event__meeting_state__cancel
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_search_status
+msgid "Cancelled"
+msgstr "Anulowane"
+
+#. module: hfb_app_calendar_event_status
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_cancel_form
+msgid "Close"
+msgstr "Zamknij"
+
+#. module: hfb_app_calendar_event_status
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_form_status
+msgid "Confirm"
+msgstr "Potwierdź"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields.selection,name:hfb_app_calendar_event_status.selection__calendar_event__meeting_state__open
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_search_status
+msgid "Confirmed"
+msgstr "Potwierdzone"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields,field_description:hfb_app_calendar_event_status.field_calendar_event_cancel__create_uid
+msgid "Created by"
+msgstr "Utworzone przez"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields,field_description:hfb_app_calendar_event_status.field_calendar_event_cancel__create_date
+msgid "Created on"
+msgstr "Data utworzenia"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields,field_description:hfb_app_calendar_event_status.field_calendar_event_cancel__display_name
+msgid "Display Name"
+msgstr "Nazwa wyświetlana"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields.selection,name:hfb_app_calendar_event_status.selection__calendar_event__meeting_state__done
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_search_status
+msgid "Done"
+msgstr "Odbyte"
+
+#. module: hfb_app_calendar_event_status
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_search_status
+msgid "Group By"
+msgstr "Grupuj według"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields,field_description:hfb_app_calendar_event_status.field_calendar_event_cancel__id
+msgid "ID"
+msgstr "ID"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields,field_description:hfb_app_calendar_event_status.field_calendar_event_cancel__write_uid
+msgid "Last Updated by"
+msgstr "Ostatnio aktualizowane przez"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields,field_description:hfb_app_calendar_event_status.field_calendar_event_cancel__write_date
+msgid "Last Updated on"
+msgstr "Data ostatniej aktualizacji"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields,field_description:hfb_app_calendar_event_status.field_calendar_event_cancel__event_id
+msgid "Meeting"
+msgstr "Spotkanie"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields,field_description:hfb_app_calendar_event_status.field_calendar_event__meeting_state
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_search_status
+msgid "Meeting Status"
+msgstr "Status spotkania"
+
+#. module: hfb_app_calendar_event_status
+#. odoo-python
+#: code:addons/hfb_app_calendar_event_status/wizard/calendar_event_cancel.py:0
+#, python-format
+msgid "Meeting cancelled. Reason: %s"
+msgstr "Spotkanie anulowane. Powód: %s"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields,field_description:hfb_app_calendar_event_status.field_calendar_event_cancel__reason
+msgid "Reason"
+msgstr "Powód"
+
+#. module: hfb_app_calendar_event_status
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_form_status
+msgid "Set as Done"
+msgstr "Oznacz jako odbyte"
+
+#. module: hfb_app_calendar_event_status
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_form_status
+msgid "Set to Unconfirmed"
+msgstr "Ustaw jako niepotwierdzone"
+
+#. module: hfb_app_calendar_event_status
+#: model:ir.model.fields.selection,name:hfb_app_calendar_event_status.selection__calendar_event__meeting_state__draft
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_search_status
+msgid "Unconfirmed"
+msgstr "Niepotwierdzone"
+
+#. module: hfb_app_calendar_event_status
+#: model_terms:ir.ui.view,arch_db:hfb_app_calendar_event_status.view_calendar_event_cancel_form
+msgid "Why is the meeting cancelled?"
+msgstr "Dlaczego spotkanie jest anulowane?"
